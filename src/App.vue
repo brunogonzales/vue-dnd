@@ -1,28 +1,42 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <main class="container">
+      <Board id="board-1">
+        <Card id="card-1" draggable="true"><p>Card one</p></Card>
+      </Board>
+
+      <Board id="board-2">
+        <Card id="card-2" draggable="true"><p>Card two</p></Card>
+      </Board>
+    </main>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Board from "@/components/Board";
+import Card from "@/components/Card";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  components: { Board, Card },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 768px;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 15px;
 }
 </style>
